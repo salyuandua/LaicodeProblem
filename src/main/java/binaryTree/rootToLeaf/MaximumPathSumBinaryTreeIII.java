@@ -1,4 +1,4 @@
-package binaryTree;
+package binaryTree.rootToLeaf;
 
 import pojo.TreeNode;
 
