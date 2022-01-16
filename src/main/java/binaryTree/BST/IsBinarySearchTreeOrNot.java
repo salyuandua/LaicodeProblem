@@ -14,6 +14,6 @@ public class IsBinarySearchTreeOrNot {
         if (root.key <= min || root.key >= max) {
             return false;
         }
-        return helper(root.left, min, root.key) && helper(root.right, root.key, max);
+        return helper(root.left, min,  root.key) && helper(root.right, root.key, max);
     }
 }
