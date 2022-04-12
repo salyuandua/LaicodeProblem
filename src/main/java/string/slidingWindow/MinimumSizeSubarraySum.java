@@ -1,4 +1,4 @@
-package slidingWindow;
+package string.slidingWindow;
 
 public class MinimumSizeSubarraySum {
     public int minSubArrayLen(int num, int[] nums) {
