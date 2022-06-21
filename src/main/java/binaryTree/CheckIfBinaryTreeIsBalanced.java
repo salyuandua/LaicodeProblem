@@ -25,4 +25,5 @@ public class CheckIfBinaryTreeIsBalanced {
         }
         return Math.max(left, right) + 1;
     }
+
 }

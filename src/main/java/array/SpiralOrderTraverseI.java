@@ -34,4 +34,49 @@ public class SpiralOrderTraverseI {
         }
         helper(mat, offset + 1, size + 2, ans);
     }
+
+    public List<Integer> spiral1(int[][] matrix) {
+        int m = matrix.length;
+        int n = matrix[0].length;
+        List<Integer> res = new ArrayList<>();
+        int upBound = 0;
+        int lowBound = m - 1;
+        int leftBound = 0;
+        int rightBound = n - 1;
+        while(res.size() < m * n) {
+            if(upBound <= lowBound) {
+                for(int i = leftBound; i <= rightBound; i++) {
+                    res.add(matrix[upBound][i]);
+                }
+                upBound++;
+            }
+
+            if(leftBound <= rightBound) {
+                for(int i = upBound; i <= lowBound; i++) {
+                    res.add(matrix[i][rightBound]);
+                }
+                rightBound--;
+            }
+
+            if(upBound <= lowBound) {
+                for(int i = rightBound; i >= leftBound; i--) {
+                    res.add(matrix[lowBound][i]);
+                }
+                lowBound--;
+            }
+
+            if(leftBound <= rightBound) {
+                for(int i = lowBound; i >= upBound; i--) {
+                    res.add(matrix[i][leftBound]);
+                }
+                leftBound++;
+            }
+
+            
+        }
+        return res;
+    }
+
+
+
 }
