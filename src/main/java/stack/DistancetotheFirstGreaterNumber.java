@@ -7,14 +7,15 @@ public class DistancetotheFirstGreaterNumber {
     public static int[] distanceToFirstGreater(int[] nums) {
         // Write your solution here
         int[] result = new int[nums.length];
-        Stack<Entry> stack = new Stack<>();
-        for (int i = 0; i < nums.length; i++) {
+        Stack<Integer> stack = new Stack<>();
+        for (int i = nums.length - 1; i >= 0; i--) {
             int cur = nums[i];
-            while (!stack.isEmpty() && cur > stack.peek().value) {
-                Entry entry = stack.pop();
-                result[entry.idx] = i - entry.idx;
+            while(!stack.isEmpty() && cur >= nums[stack.peek()]) {
+                stack.pop();
             }
-            stack.push(new Entry(i, cur));
+            result[i] = stack.isEmpty() ? 0 : stack.peek() - i;
+            stack.push(i);
+
         }
         return result;
     }

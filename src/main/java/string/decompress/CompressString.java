@@ -1,5 +1,5 @@
 package string.decompress;
-
+//“abbcccdeee” → “ab2c3de3”
 public class CompressString {
     public static String compress(String input) {
         if (input == null ||input.equals("")) return input;
@@ -10,7 +10,7 @@ public class CompressString {
         while (fast < inputArray.length) {
             if (inputArray[slow] != inputArray[fast]) {
                 result.append(inputArray[slow]);
-                result.append("1");
+                //result.append("1");
                 slow++;
                 fast++;
                 continue;

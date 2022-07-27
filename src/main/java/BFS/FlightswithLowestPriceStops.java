@@ -23,7 +23,7 @@ public class FlightswithLowestPriceStops {
             @Override
             public int compare(int[] o1, int[] o2) {
                 // TODO Auto-generated method stub
-                return Integer.compare(o1[1], o2[1]);;
+                return Integer.compare(o1[1], o2[1]);
             }
             
         });
